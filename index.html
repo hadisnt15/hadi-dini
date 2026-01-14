@@ -53,6 +53,35 @@
 
 
     <script src="js/app.js"></script>
+    <script>
+        function decodeBase64(str) {
+            try {
+                return decodeURIComponent(escape(atob(str)));
+            } catch {
+                return null;
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestEncoded = urlParams.get('guest');
+
+        if (guestEncoded) {
+            const guestName = decodeBase64(guestEncoded);
+            if (guestName) {
+                document.getElementById('guestName').textContent = guestName;
+            }
+        }
+
+        document.getElementById('mainWrapper').addEventListener('click', function() {
+            const guestName = document.getElementById('guestName').textContent.trim();
+            const encodedGuest = btoa(unescape(encodeURIComponent(guestName)));
+            window.location.href = `invitation.html?guest=${encodedGuest}`;
+        });
+
+
+
+
+    </script>
 </body>
 
 

@@ -34,7 +34,7 @@
 
         <!-- NAMA TAMU (OPSIONAL DISPLAY) -->
         <div class="absolute top-[7%] left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-1 rounded-full text-xs max-w-[90vw] whitespace-normal text-center">
-            Untuk: <span id="guestName">Tamu Undangan</span>
+            Untuk: <span id="guestNameDisplay">Tamu Undangan</span>
         </div>
 
 
@@ -407,5 +407,24 @@
     </audio>
 
     <script src="js/app.js"></script>
+    <script>
+        function decodeBase64(str) {
+            try {
+                return decodeURIComponent(escape(atob(str)));
+            } catch {
+                return null;
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestEncoded = urlParams.get('guest');
+
+        if (guestEncoded) {
+            const guestName = decodeBase64(guestEncoded);
+            if (guestName) {
+                document.getElementById('guestNameDisplay').textContent = guestName;
+            }
+        }
+    </script>
 </body>
 </html>

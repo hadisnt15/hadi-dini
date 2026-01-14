@@ -1,56 +1,16 @@
 // ==========================
 // UTIL: Decode Base64
 // ==========================
-function decodeBase64(str) {
-    try {
-        return decodeURIComponent(escape(atob(str)));
-    } catch {
-        return null;
-    }
-}
+// function encodeBase64(str) {
+//     return btoa(unescape(encodeURIComponent(str)));
+// }
 
-// ==========================
-// INDEX PAGE LOGIC
-// ==========================
-const guestNameEl = document.getElementById('guestName');
-const openBtn = document.getElementById('openInvitation');
-
-if (guestNameEl && openBtn) {
-    const params = new URLSearchParams(window.location.search);
-    const guestEncoded = params.get('guest');
-
-    let guestName = 'Tamu Undangan';
-
-    if (guestEncoded) {
-        const decoded = decodeBase64(guestEncoded);
-        if (decoded) guestName = decoded;
-    }
-
-    // tampilkan nama di index
-    guestNameEl.innerText = guestName;
-
-    // TERUSKAN KE INVITATION
-    if (guestEncoded) {
-        openBtn.href = `invitation.html?guest=${guestEncoded}`;
-    } else {
-        openBtn.href = `invitation.html`;
-    }
-}
-
-// ==========================
-// INVITATION PAGE LOGIC
-// ==========================
-const guestTarget = document.getElementById('guestName');
-
-if (guestTarget) {
-    const params = new URLSearchParams(window.location.search);
-    const guestEncoded = params.get('guest');
-
-    if (guestEncoded) {
-        const decoded = decodeBase64(guestEncoded);
-        if (decoded) guestTarget.innerText = decoded;
-    }
-}
+// document.getElementById('mainWrapper').addEventListener('click', function() {
+//     const guestNameEl = document.getElementById('guestName');
+//     let guestName = guestNameEl ? guestNameEl.textContent.trim() : '';
+//     let encodedGuest = encodeBase64(guestName);
+//     window.location.href = `invitation.html?guest=${encodedGuest}`;
+// });
 
 // ==========================
 // GALLERY MODAL LOGIC
@@ -435,18 +395,16 @@ function revealGallery() {
 // KLIK DI MANA SAJA UNTUK MEMBUKA UNDANGAN
 
 // UTK index.html
-document.getElementById('mainWrapper').addEventListener('click', function() {
-    const guestNameEl = document.getElementById('guestName');
-    let guestName = guestNameEl ? guestNameEl.textContent.trim() : '';
-    // Encode supaya aman untuk URL
-    guestName = encodeURIComponent(guestName);
+// document.getElementById('mainWrapper').addEventListener('click', function() {
+//     const guestNameEl = document.getElementById('guestName');
+//     let guestName = guestNameEl ? guestNameEl.textContent.trim() : '';
+//     guestName = encodeURIComponent(guestName);
+//     window.location.href = `invitation.html?guest=${guestName}`;
+// });
 
-    window.location.href = `invitation.html?guest=${guestName}`;
-});
-
-// Untuk invitation.html
-const urlParams = new URLSearchParams(window.location.search);
-  const guest = urlParams.get('guest');
-  if (guest) {
-    document.getElementById('guestName').textContent = decodeURIComponent(guest);
-  }
+// // Untuk invitation.html
+// const urlParams = new URLSearchParams(window.location.search);
+//   const guest = urlParams.get('guest');
+//   if (guest) {
+//     document.getElementById('guestNameDisplay').textContent = decodeURIComponent(guest);
+//   }
