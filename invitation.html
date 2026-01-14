@@ -13,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center font-[Poppins]">
+<body class="m-0 p-0 bg-black overflow-hidden flex items-center justify-center font-[Poppins]">
 
     <!-- LOADING -->
     <div id="loadingScreen"
@@ -25,12 +25,12 @@
     </div>
 
     <!-- WRAPPER DESKTOP -->
-    <div class="relative w-full max-w-[430px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl bg-black">
+    <div class="relative w-screen max-w-[430px] h-[100svh] overflow-hidden">
 
         <!-- BACKGROUND -->
-        <img src="assets/images/background-invitation.jpg"
+        <img src="assets/images/background-invitation-9x19.5.jpg"
             alt="Background"
-            class="absolute inset-0 w-full h-full object-contain">
+            class="absolute inset-0 w-full h-full object-cover">
 
         <!-- NAMA TAMU (OPSIONAL DISPLAY) -->
         <div class="absolute top-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-1 rounded-full text-xs">
@@ -39,16 +39,16 @@
 
         <!-- BUTTON: GALLERY -->
         <img src="assets/buttons/button-gallery.png"
-            class="absolute top-[185px] left-[5px] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-1"
+            class="absolute top-[20%] left-[4%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-1"
             data-action="gallery">
 
         <!-- BUTTON: DATE & VENUE -->
         <img src="assets/buttons/button-date-and-venue.png"
-            class="absolute top-[145px] right-[25px] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-2"
+            class="absolute top-[20%] right-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-2"
             data-action="date">
 
         <!-- BUTTON: ABOUT US -->
-        <div class="absolute top-[360px] left-1/2 -translate-x-1/2 ">
+        <div class="absolute top-[44%] left-1/2 -translate-x-1/2 ">
             <img src="assets/buttons/button-about-us.png"
             class="w-[160px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-3"
             data-action="about">
@@ -56,16 +56,16 @@
 
         <!-- BUTTON: OUR LAUGHTALES -->
         <img src="assets/buttons/button-our-laughtales.png"
-            class="absolute bottom-[180px] right-[25px] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-4"
+            class="absolute bottom-[18%] right-[8%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-4"
             data-action="story">
 
         <!-- BUTTON: GIFT -->
         <img src="assets/buttons/button-gift-box.png"
-            class="absolute bottom-[150px] left-[10px] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-5"
+            class="absolute bottom-[18%] left-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-5"
             data-action="gift">
 
         <!-- BUTTON: MUSIC -->
-        <div class="absolute bottom-[40px] left-1/2 -translate-x-1/2">
+        <div class="absolute bottom-[35%] left-1/2 -translate-x-1/2">
             <img src="assets/buttons/button-play-music.png"
             class=" w-[80px] cursor-pointer hover:scale-105 transition btn-pulse"
             data-action="music"
