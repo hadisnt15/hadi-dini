@@ -11,10 +11,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="m-0 p-0 bg-black min-h-screen flex items-center justify-center">
+<body class="m-0 p-0 bg-black overflow-hidden flex items-center justify-center">
 
     <!-- MOBILE WRAPPER -->
-    <div class="relative w-full max-w-[430px] h-[100svh] max-h-[100svh] rounded-2xl overflow-hidden shadow-2xl bg-black">
+    <div class="relative w-screen max-w-[430px] aspect-[9/19.5] rounded-2xl overflow-hidden shadow-2xl bg-black">
 
         <!-- BACKGROUND IMAGE -->
         <img
@@ -26,7 +26,7 @@
         <div class="absolute inset-0 bg-black/30"></div>
 
         <!-- CONTENT -->
-        <div class="relative z-10 h-full flex flex-col justify-start px-6 pt-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] text-center">
+        <div class="relative z-10 h-full flex flex-col justify-start px-6 py-6 text-center">
 
             <!-- TOP TITLE -->
             <div class="mt-10">
@@ -40,7 +40,7 @@
             </div>
 
             <!-- BOTTOM CARD -->
-            <div class="mt-auto mb-[12svh] bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6">
+            <div class="mt-auto mb-20 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6">
 
                 <h2 id="guestName"
                     class="text-lg font-semibold text-gray-800 mb-4">
