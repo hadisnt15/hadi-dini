@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Undangan Hadi & Dini</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-700
+             flex items-center justify-center">
+
+    <!-- MOBILE WRAPPER -->
+    <div class="relative w-full max-w-[430px] aspect-[9/16]
+                rounded-2xl overflow-hidden shadow-2xl bg-black">
+
+        <!-- BACKGROUND IMAGE -->
+        <img
+            src="assets/images/hadi-dini.jpg"
+            alt="Background"
+            class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- OVERLAY -->
+        <div class="absolute inset-0 bg-black/30"></div>
+
+        <!-- CONTENT -->
+        <div class="relative z-10 h-full flex flex-col justify-between px-6 py-10 text-center">
+
+            <!-- TOP TITLE -->
+            <div class="mt-6">
+                <p class="text-sm tracking-widest text-white/80 uppercase mb-2">
+                    The Wedding of
+                </p>
+
+                <h1 class="text-6xl font-bold text-white drop-shadow huruf-sambung">
+                    Hadi & Dini
+                </h1>
+            </div>
+
+            <!-- BOTTOM CARD -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6">
+
+                <h2 id="guestName"
+                    class="text-lg font-semibold text-gray-800 mb-4">
+                    Tamu Undangan
+                </h2>
+
+                <a id="openInvitation"
+                   href="invitation.html"
+                   class="inline-block bg-amber-950 hover:bg-amber-700
+                          text-white px-6 py-3 rounded-full transition">
+                    Open Invitation
+                </a>
+
+            </div>
+        </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>
