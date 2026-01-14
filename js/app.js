@@ -431,7 +431,22 @@ function revealGallery() {
         }, index * 120); // delay bertahap
     });
 }
+// ==================
+// KLIK DI MANA SAJA UNTUK MEMBUKA UNDANGAN
 
+// UTK index.html
 document.getElementById('mainWrapper').addEventListener('click', function() {
-    window.location.href = 'invitation.html';
+    const guestNameEl = document.getElementById('guestName');
+    let guestName = guestNameEl ? guestNameEl.textContent.trim() : '';
+    // Encode supaya aman untuk URL
+    guestName = encodeURIComponent(guestName);
+
+    window.location.href = `invitation.html?guest=${guestName}`;
 });
+
+// Untuk invitation.html
+const urlParams = new URLSearchParams(window.location.search);
+  const guest = urlParams.get('guest');
+  if (guest) {
+    document.getElementById('guestName').textContent = decodeURIComponent(guest);
+  }
