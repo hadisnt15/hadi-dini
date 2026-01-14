@@ -11,146 +11,9 @@
     
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        /* Pastikan body dan wrapper fullscreen */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            font-family: 'Poppins', sans-serif;
-            overflow: hidden;
-        }
-        /* Wrapper utama supaya bisa scroll jika konten melebihi tinggi layar */
-        .wrapper {
-            position: relative;
-            width: 100vw;
-            max-width: 430px;
-            min-height: 100vh;
-            overflow-y: auto;
-            border-radius: 1rem;
-            -webkit-overflow-scrolling: touch; /* smooth scroll di iOS */
-        }
-        /* Background image tetap full */
-        .bg-image {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            user-select: none;
-            pointer-events: none;
-            z-index: 0;
-        }
-        /* Overlay */
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            pointer-events: none;
-        }
-        /* Nama tamu posisi top dan center, dengan safe area */
-        .guest-name {
-            position: absolute;
-            top: calc(7% + env(safe-area-inset-top, 0px));
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            max-width: 90vw;
-            text-align: center;
-            z-index: 10;
-            white-space: normal;
-            user-select: none;
-        }
-        /* Tombol-tombol absolute dengan safe-area handling */
-        .btn-gallery {
-            position: absolute;
-            top: calc(20% + env(safe-area-inset-top, 0px));
-            left: calc(4% + env(safe-area-inset-left, 0px));
-            width: 140px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
-        .btn-date {
-            position: absolute;
-            top: calc(20% + env(safe-area-inset-top, 0px));
-            right: calc(6% + env(safe-area-inset-right, 0px));
-            width: 140px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
-        .btn-about {
-            position: absolute;
-            top: calc(44% + env(safe-area-inset-top, 0px));
-            left: 50%;
-            transform: translateX(-50%);
-            width: 160px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
-        .btn-laughtales {
-            position: absolute;
-            bottom: calc(18% + env(safe-area-inset-bottom, 0px));
-            right: calc(8% + env(safe-area-inset-right, 0px));
-            width: 140px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
-        .btn-gift {
-            position: absolute;
-            bottom: calc(18% + env(safe-area-inset-bottom, 0px));
-            left: calc(6% + env(safe-area-inset-left, 0px));
-            width: 140px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            z-index: 10;
-        }
-        .btn-music-wrapper {
-            position: absolute;
-            bottom: calc(35% + env(safe-area-inset-bottom, 0px));
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-        .btn-music {
-            width: 80px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        /* Hover & active scale effect */
-        .btn-pulse:hover {
-            transform: scale(1.05);
-        }
-        .btn-pulse:active {
-            transform: scale(0.95);
-        }
-        /* Modal animations */
-        .modal-animate {
-            animation: fadeInScale 0.25s ease forwards;
-        }
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
 </head>
 
-<body class="font-[Poppins]">
+<body class="m-0 p-0 bg-black overflow-hidden flex items-center justify-center font-[Poppins]">
 
     <!-- LOADING -->
     <div id="loadingScreen"
@@ -162,58 +25,52 @@
     </div>
 
     <!-- WRAPPER DESKTOP -->
-    <div class="wrapper rounded-2xl shadow-2xl bg-black">
+    <div class="relative w-screen max-w-[430px] aspect-[9/19.5] overflow-y-auto max-h-screen rounded-2xl">
 
         <!-- BACKGROUND -->
         <img src="assets/images/background-invitation-9x19.5.jpg"
             alt="Background"
-            class="bg-image" />
-
-        <!-- OVERLAY -->
-        <div class="overlay"></div>
+            class="absolute inset-0 w-full h-full object-cover">
 
         <!-- NAMA TAMU (OPSIONAL DISPLAY) -->
-        <div class="guest-name" id="guestNameDisplay">
-            Untuk: Tamu Undangan
+        <div class="absolute top-[7%] left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-1 rounded-full text-xs max-w-[90vw] whitespace-normal text-center">
+            Untuk: <span id="guestNameDisplay">Tamu Undangan</span>
         </div>
+
 
         <!-- BUTTON: GALLERY -->
         <img src="assets/buttons/button-gallery.png"
-            class="btn-gallery btn-pulse"
-            data-action="gallery"
-            alt="Gallery Button" />
+            class="absolute top-[20%] left-[4%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-1"
+            data-action="gallery">
 
         <!-- BUTTON: DATE & VENUE -->
         <img src="assets/buttons/button-date-and-venue.png"
-            class="btn-date btn-pulse"
-            data-action="date"
-            alt="Date & Venue Button" />
+            class="absolute top-[20%] right-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-2"
+            data-action="date">
 
         <!-- BUTTON: ABOUT US -->
-        <img src="assets/buttons/button-about-us.png"
-            class="btn-about btn-pulse"
-            data-action="about"
-            alt="About Us Button" />
+        <div class="absolute top-[44%] left-1/2 -translate-x-1/2 ">
+            <img src="assets/buttons/button-about-us.png"
+            class="w-[160px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-3"
+            data-action="about">
+        </div>
 
         <!-- BUTTON: OUR LAUGHTALES -->
         <img src="assets/buttons/button-our-laughtales.png"
-            class="btn-laughtales btn-pulse"
-            data-action="story"
-            alt="Our Laughtales Button" />
+            class="absolute bottom-[18%] right-[8%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-4"
+            data-action="story">
 
         <!-- BUTTON: GIFT -->
         <img src="assets/buttons/button-gift-box.png"
-            class="btn-gift btn-pulse"
-            data-action="gift"
-            alt="Gift Box Button" />
+            class="absolute bottom-[18%] left-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-5"
+            data-action="gift">
 
         <!-- BUTTON: MUSIC -->
-        <div class="btn-music-wrapper">
+        <div class="absolute bottom-[35%] left-1/2 -translate-x-1/2">
             <img src="assets/buttons/button-play-music.png"
-                class="btn-music btn-pulse"
-                data-action="music"
-                id="musicBtn"
-                alt="Music Button" />
+            class=" w-[80px] cursor-pointer hover:scale-105 transition btn-pulse"
+            data-action="music"
+            id="musicBtn">
         </div>
 
     </div>
@@ -548,7 +405,7 @@
         if (guestEncoded) {
             const guestName = decodeBase64(guestEncoded);
             if (guestName) {
-                document.getElementById('guestNameDisplay').textContent = 'Untuk: ' + guestName;
+                document.getElementById('guestNameDisplay').textContent = guestName;
             }
         }
     </script>
