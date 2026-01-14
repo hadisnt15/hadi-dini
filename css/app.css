@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
-    overflow: hidden;
-    touch-action: none;
+    overflow-y: auto;
+    /* touch-action: none; */
 }
 
 @keyframes modalIn {
