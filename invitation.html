@@ -13,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="m-0 p-0 bg-black overflow-hidden flex items-center justify-center font-[Poppins]">
+<body class="m-0 p-0 bg-black min-h-screen flex items-center justify-center font-[Poppins]">
 
     <!-- LOADING -->
     <div id="loadingScreen"
@@ -25,7 +25,7 @@
     </div>
 
     <!-- WRAPPER DESKTOP -->
-    <div class="relative w-screen max-w-[430px] aspect-[9/19.5] overflow-hidden">
+    <div class="relative w-full max-w-[430px] h-[100svh] max-h-[100svh] overflow-hidden">
 
         <!-- BACKGROUND -->
         <img src="assets/images/background-invitation-9x19.5.jpg"
@@ -56,12 +56,12 @@
 
         <!-- BUTTON: OUR LAUGHTALES -->
         <img src="assets/buttons/button-our-laughtales.png"
-            class="absolute bottom-[18%] right-[8%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-4"
+            class="absolute bottom-[calc(18%+env(safe-area-inset-bottom))] right-[8%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-4"
             data-action="story">
 
         <!-- BUTTON: GIFT -->
         <img src="assets/buttons/button-gift-box.png"
-            class="absolute bottom-[18%] left-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-5"
+            class="absolute bottom-[calc(18%+env(safe-area-inset-bottom))] left-[6%] w-[140px] cursor-pointer hover:scale-105 active:scale-95 transition btn-pulse delay-5"
             data-action="gift">
 
         <!-- BUTTON: MUSIC -->
