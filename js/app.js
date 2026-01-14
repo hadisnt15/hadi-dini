@@ -431,3 +431,7 @@ function revealGallery() {
         }, index * 120); // delay bertahap
     });
 }
+
+document.getElementById('mainWrapper').addEventListener('click', function() {
+    window.location.href = 'invitation.html';
+});
