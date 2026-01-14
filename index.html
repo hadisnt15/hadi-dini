@@ -24,32 +24,34 @@
     <div class="absolute inset-0 bg-black/30"></div>
 
     <!-- Konten utama -->
-    <div class="relative z-10 flex flex-col px-6 py-12 text-center min-h-screen">
+    <div
+        class="relative z-10 flex flex-col px-6 py-12 text-center min-h-screen"
+        style="padding-top: calc(12px + env(safe-area-inset-top));"
+        >
+        <!-- konten atas -->
+        <div class="mb-12">
+            <p class="text-sm tracking-widest text-white/80 uppercase mb-2">
+            The Wedding of
+            </p>
+            <h1 class="text-6xl font-bold text-white drop-shadow huruf-sambung">
+            Hadi & Dini
+            </h1>
+        </div>
 
-      <!-- Bagian atas -->
-      <div class="mb-12">
-        <p class="text-sm tracking-widest text-white/80 uppercase mb-2">
-          The Wedding of
-        </p>
-        <h1 class="text-6xl font-bold text-white drop-shadow huruf-sambung">
-          Hadi & Dini
-        </h1>
-      </div>
+        <!-- spacer -->
+        <div class="flex-grow"></div>
 
-      <!-- Spacer fleksibel supaya konten bawah turun ke bawah -->
-      <div class="flex-grow"></div>
-
-      <!-- Bagian bawah kartu -->
-      <div class="mb-24 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6">
-        <h2 id="guestName" class="text-lg font-semibold text-gray-800 mb-4">
-          Tamu Undangan
-        </h2>
-        <p class="text-xs text-gray-600 italic select-none">
-          Klik di mana saja untuk membuka undangan
-        </p>
-      </div>
-
+        <!-- bagian bawah -->
+        <div class="mb-24 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6">
+            <h2 id="guestName" class="text-lg font-semibold text-gray-800 mb-4">
+            Tamu Undangan
+            </h2>
+            <p class="text-xs text-gray-600 italic select-none">
+            Klik di mana saja untuk membuka undangan
+            </p>
+        </div>
     </div>
+
 
   </div>
 
